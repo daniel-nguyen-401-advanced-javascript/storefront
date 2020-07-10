@@ -1,8 +1,11 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import store from './store';
+import store from './store/store';
 import Products from './Components/Products';
 import Categories from './Components/Categories';
+import Footer from './Components/Footer/Footer';
+import Header from './Components/Header/Header';
+import './styles/styles.scss';
 
 // connect app to global state redux store
 // wrap app in store provider
@@ -13,9 +16,11 @@ function App() {
     <Provider store={store}>
 
     <div className="App">
-      <h1>Hello World</h1>
+      <Header />
+      <br />
       <Categories />
       <Products />
+      <Footer />
     </div>
     </Provider>
   );

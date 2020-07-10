@@ -9,7 +9,7 @@ function Categories(props) {
     categoriesHTML.push(
       <Button
         variant='contained'
-        color='secondary'
+        color='primary'
         key={i}
         onClick={(e) => {
           //change current cat
@@ -23,7 +23,10 @@ function Categories(props) {
         </Button>,
     );
   }
-  return <>{categoriesHTML}</>;
+  return <>
+  <h2>Categories</h2>
+  {categoriesHTML}
+  </>;
 }
 
 const mapStateToProps = (state) => {
