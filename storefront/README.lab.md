@@ -31,4 +31,4 @@ And as developers, here are the high level development tasks that address the ab
 ## Testing Instructions   
 
 ## UML
-![lab-29-uml]()
+![lab-29-uml](https://github.com/daniel-nguyen-401-advanced-javascript/storefront/blob/redux/storefront/assets/lab-29-uml.png)
