@@ -4,8 +4,8 @@
     
 ## Links
     
-- [CodeSandbox]()
-- [Netlify]()
+- [CodeSandbox](https://codesandbox.io/s/github/daniel-nguyen-401-advanced-javascript/storefront/tree/redux/storefront?fontsize=14&hidenavigation=1&theme=dark)
+- [Netlify](https://eager-wright-319d0e.netlify.app)
     
 ## Phase 1 Requirements
 
