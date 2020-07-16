@@ -1,6 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import store from './store/store';
+import store from './store';
 import Products from './Components/Products';
 import Categories from './Components/Categories';
 import Footer from './Components/Footer/Footer';

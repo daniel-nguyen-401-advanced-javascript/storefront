@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -10,14 +10,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 345,
+//   },
+//   media: {
+//     height: 140,
+//   },
+// });
 
 function Products(props){
   //list all products that belong to the current selected cat
@@ -27,7 +27,7 @@ function Products(props){
    
   for (let i = 0; i < props.products.length; i++) {
     if (props.products[i].category === props.currentCategory)
-      productsHTML.push(<Card className='card'>
+      productsHTML.push(<Card className='card' key={i}>
         <CardActionArea>
           <CardMedia
             className='card-media'
@@ -45,10 +45,15 @@ function Products(props){
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Add to cart
+            Quantity: {props.products[i].stock}
           </Button>
-          <Button size="small" color="primary">
-            Learn More
+          <Button size="small" color="primary" onClick={(e) => {
+          props.dispatch({
+            type: 'ADD_TO_CART',
+            payload: props.products[i],
+          });
+        }}>
+            Add to cart
           </Button>
         </CardActions>
       </Card>);
@@ -68,11 +73,11 @@ function Products(props){
   );
 }
 
-const mapStatetoProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-    products: state.products,
-    currentCategory: state.currentCategory,
+    products: state.products.allProducts,
+    currentCategory: state.categories.currentCategory,
   };
 };
 
-export default connect(mapStatetoProps)(Products);
+export default connect(mapStateToProps)(Products);
