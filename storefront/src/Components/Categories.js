@@ -24,8 +24,10 @@ function Categories(props) {
     );
   }
   return <>
+  <div className='Categories'>
   <h3>Categories</h3>
   {categoriesHTML}
+  </div>
   </>;
 }
 

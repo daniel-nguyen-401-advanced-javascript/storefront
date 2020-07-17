@@ -4,12 +4,36 @@
   text-align: center;
 }
 
+.topMod {
+  border: 1px solid #0941bac2;
+  overflow: scroll;
+}
+
+.catBox {
+  border-right: 1px dotted #0941bac2;
+}
+
+.cartBox {
+  border: 1px dotted red;
+  position: absolute;
+  right: 15%;
+  top: 7%;
+  overflow: scroll;
+}
+
+.SimpleCart {
+  overflow: scroll;
+  border: 1px solid red;
+  max-height: 50%;
+}
 
 .body {
   position: absolute;
-  top: 25%;
+  top: 28%;
   bottom: 15%;
   overflow: scroll;
+  padding: 10px;
+  border: .5px solid #0941bac2;
 }
 
 .Footer {

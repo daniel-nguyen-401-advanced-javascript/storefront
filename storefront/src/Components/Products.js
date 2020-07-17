@@ -9,7 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
 
 // const useStyles = makeStyles({
 //   root: {
@@ -53,7 +52,7 @@ function Products(props){
             payload: props.products[i],
           });
         }}>
-            Add to cart
+            Add to cart ${props.products[i].price}
           </Button>
         </CardActions>
       </Card></Grid>);
@@ -62,7 +61,7 @@ function Products(props){
   return (
     <>
     <div className='Products'>
-    <h2>Products</h2>
+  
     <Grid container spacing={3} direction='row'>
     
     {productsHTML}

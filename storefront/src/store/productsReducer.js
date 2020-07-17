@@ -18,7 +18,7 @@ const initState = {
         name: 'Carrot',
         description: 'Crunch all the things',
         stock: 25,
-        price: 0.3,
+        price: 1,
         category: 'food',
     },
     {
@@ -127,6 +127,16 @@ const reducer = (state = initState, action) => {
         }
       }
       break;
+    
+    case 'REMOVE_FROM_CART':
+   
+      for (let i = 0; i < newState.allProducts.length; i++) {
+        if (newState.allProducts[i].name === action.payload.name){
+          newState.allProducts[i] = {...newState.allProducts[i], stock: newState.allProducts[i].stock +1};
+        }
+      }
+      break;
+
     default:
       break;
   }
