@@ -24,7 +24,7 @@ function Categories(props) {
     );
   }
   return <>
-  <h2>Categories</h2>
+  <h3>Categories</h3>
   {categoriesHTML}
   </>;
 }

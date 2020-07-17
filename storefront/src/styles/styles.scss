@@ -5,16 +5,16 @@
 }
 
 
-
-
-
-
-
-
+.body {
+  position: absolute;
+  top: 25%;
+  bottom: 15%;
+  overflow: scroll;
+}
 
 .Footer {
   background-color: #0941bac2;
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   width: 100%;
 

@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
 // const useStyles = makeStyles({
 //   root: {
@@ -22,12 +23,11 @@ import Grid from '@material-ui/core/Grid';
 function Products(props){
   //list all products that belong to the current selected cat
   //only show prods that belong to current cat
-
   let productsHTML = [];
    
   for (let i = 0; i < props.products.length; i++) {
     if (props.products[i].category === props.currentCategory)
-      productsHTML.push(<Card className='card' key={i}>
+      productsHTML.push(<Grid item xs={6} md={4} lg={3}key={i}><Card className='card' key={i}>
         <CardActionArea>
           <CardMedia
             className='card-media'
@@ -47,7 +47,7 @@ function Products(props){
           <Button size="small" color="primary">
             Quantity: {props.products[i].stock}
           </Button>
-          <Button size="small" color="primary" onClick={(e) => {
+          <Button variant="outlined" size="small" color="primary" onClick={(e) => {
           props.dispatch({
             type: 'ADD_TO_CART',
             payload: props.products[i],
@@ -56,17 +56,17 @@ function Products(props){
             Add to cart
           </Button>
         </CardActions>
-      </Card>);
+      </Card></Grid>);
   }
 
   return (
     <>
     <div className='Products'>
     <h2>Products</h2>
-    <Grid container spacing={3}>
-      <Grid item xs={4}>
+    <Grid container spacing={3} direction='row'>
+    
     {productsHTML}
-      </Grid>
+    
     </Grid>
     </div>
     </>
@@ -77,6 +77,7 @@ const mapStateToProps = (state) => {
   return {
     products: state.products.allProducts,
     currentCategory: state.categories.currentCategory,
+    cartCount: state.cart.cartCount,
   };
 };
 

@@ -1,5 +1,6 @@
 const initState = {
   cartContents: [],
+  cartCount: 0,
 };
 
 const reducer = (state = initState, action) => {
@@ -10,6 +11,7 @@ const reducer = (state = initState, action) => {
     
     case 'ADD_TO_CART':
       newState.cartContents.push(action.payload);
+      newState.cartCount++;
       break;
     
     case 'REMOVE_FROM_CART':

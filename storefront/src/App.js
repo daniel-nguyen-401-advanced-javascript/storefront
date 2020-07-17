@@ -19,7 +19,9 @@ function App() {
       <Header />
       <br />
       <Categories />
+      <div className="body">
       <Products />
+      </div>
       <Footer />
     </div>
     </Provider>
