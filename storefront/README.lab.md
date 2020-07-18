@@ -4,8 +4,8 @@ Virtual Store Phase 2: Continue work on the e-Commerce storefront, breaking up t
     
 ## Links
     
-- [CodeSandbox](https://codesandbox.io/s/github/daniel-nguyen-401-advanced-javascript/storefront/tree/redux/storefront?fontsize=14&hidenavigation=1&theme=dark)
-- [Netlify](https://eager-wright-319d0e.netlify.app)
+- [CodeSandbox](https://codesandbox.io/embed/github/daniel-nguyen-401-advanced-javascript/storefront/tree/cart/storefront?fontsize=14&hidenavigation=1&theme=dark)
+- [Netlify](https://sad-shockley-facd14.netlify.app)
     
 ## Phase 2 Requirements
 
