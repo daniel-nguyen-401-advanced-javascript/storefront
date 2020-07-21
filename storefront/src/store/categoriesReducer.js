@@ -10,14 +10,12 @@ const reducer = (state = initState, action) => {
 
   let newState = { ...state };
 
-  switch (action.type) {
+  const {type, payload} = action;
+
+  switch (type) {
 
     case 'CHANGE_CATEGORY':
-      newState.currentCategory = action.payload;
-      break;
-
-    case 'ADD_CATEGORY':
-      newState.allCategories.push(action.payload);
+      newState.currentCategory = payload;
       break;
 
     default:
@@ -27,13 +25,4 @@ const reducer = (state = initState, action) => {
   return newState;
 };
 
-const addCat = (category) => {
-  return { type: 'ADD_CATEGORY', payload: category};
-};
-
-const changeCat = (category) => {
-  return { type: 'CHANGE_CATEGORY', payload: category};
-};
-
 export default reducer;
-export {addCat, changeCat};

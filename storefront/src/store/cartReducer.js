@@ -18,7 +18,6 @@ const reducer = (state = initState, action) => {
       newState.cartContents = newState.cartContents.filter((val) => {
         return val.name !== action.payload;
       });
-      newState.cartCount--;
       break;
 
     default:

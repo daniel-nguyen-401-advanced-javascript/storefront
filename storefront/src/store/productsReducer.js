@@ -108,30 +108,35 @@ const initState = {
   ],
 };
 
-const reducer = (state = initState, action) => {
+export default (state = initState, action) => {
 
   let newState = { ...state };
 
-  switch (action.type) {
+  const {type, payload} = action;
+
+  switch (type) {
+
+    case 'GET_PRODUCTS':
+      return payload;
   
     case 'ADD_PRODUCT':
-      newState.allProducts.push(action.payload);
+      newState.allProducts.push(payload);
       break;
     
     case 'ADD_TO_CART':
       //NOT WORKING
       //action.payload.name
       for (let i = 0; i < newState.allProducts.length; i++) {
-        if (newState.allProducts[i].name === action.payload.name){
+        if (newState.allProducts[i].name === payload.name){
           newState.allProducts[i] = {...newState.allProducts[i], stock: newState.allProducts[i].stock -1};
         }
       }
       break;
     
     case 'REMOVE_FROM_CART':
-   
+      // doesnt decrement stock
       for (let i = 0; i < newState.allProducts.length; i++) {
-        if (newState.allProducts[i].name === action.payload.name){
+        if (newState.allProducts[i].name === payload.name){
           newState.allProducts[i] = {...newState.allProducts[i], stock: newState.allProducts[i].stock +1};
         }
       }
@@ -148,5 +153,5 @@ const addProd = (product) => {
   return { type: 'ADD_PRODUCT', payload: product};
 };
 
-export default reducer;
+
 export {addProd};
