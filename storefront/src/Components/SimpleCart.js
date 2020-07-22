@@ -2,9 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import DeleteIcon from '@material-ui/icons/Delete';
+import * as actions from '../store/storeActions.js';
 
 function SimpleCart(props) {
-  console.log(props.cart.cartContents);
+  
   let cartToDisplay = [];
 
   for (let i = 0; i < props.cart.cartContents.length; i++) {
@@ -43,10 +44,16 @@ function SimpleCart(props) {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products.allProducts,
+    // products: state.products.allProducts,
     cart: state.cart,
-    cartCount: state.cart.cartCount,
+    cartCount: state.cartCount,
+    cartContents: state.cartContents,
   };
 };
 
-export default connect(mapStateToProps)(SimpleCart);
+const mapDispatchToProps = (dispatch, getState) => ({
+  getProducts: (data) => dispatch(actions.getProducts(data)),
+  addToCart: (data) => dispatch(actions.addToCart(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

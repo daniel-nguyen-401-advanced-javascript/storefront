@@ -1,13 +1,16 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {Button} from '@material-ui/core';
+import * as actions from '../store/storeActions.js';
 
 function Categories(props) {
+  const {getCategories} = props;
+  
   let categoriesHTML = [];
 
   useEffect(() => {
-    get();
-  }, [get]);
+    getCategories();
+  }, [getCategories]);
   
 
   for (let i = 0; i < props.categories.length; i++) {
@@ -38,9 +41,12 @@ function Categories(props) {
 
 const mapStateToProps = (state) => {
   return {
-    // get: (data) => dispatch( actions.get(data))
-    categories: state.categories.allCategories,
+    categories: state.allCategories,
   };
 };
 
-export default connect(mapStateToProps)(Categories);
+const mapDispatchToProps = (dispatch, getState) => ({
+  getCategories: (data) => dispatch( actions.getCategories(data))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

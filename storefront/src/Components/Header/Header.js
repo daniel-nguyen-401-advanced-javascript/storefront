@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {connect} from 'react-redux';
+// import * as actions from '../store/storeActions.js';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +38,7 @@ function ButtonAppBar(props) {
             KewlStuff
           </Typography>
 
-          <Button color="inherit">Cart ({props.cart.cartContents.length})</Button>
+          <Button color="inherit">Cart ({props.cartCount})</Button>
         </Toolbar>
       </AppBar>
     </div>
@@ -46,7 +48,12 @@ function ButtonAppBar(props) {
 const mapStateToProps = (state) => {
   return {
     cart: state.cart,
+    cartCount: state.cartCount
   };
 };
+
+const mapDispatchToProps = (dispatch, getState) => ({
+
+})
 
 export default connect(mapStateToProps)(ButtonAppBar);

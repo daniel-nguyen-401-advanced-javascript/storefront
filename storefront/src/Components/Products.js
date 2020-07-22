@@ -9,6 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import * as actions from '../store/storeActions.js';
+
 
 // const useStyles = makeStyles({
 //   root: {
@@ -74,10 +76,15 @@ function Products(props){
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products.allProducts,
-    currentCategory: state.categories.currentCategory,
-    cartCount: state.cart.cartCount,
+    products: state.allProducts,
+    currentCategory: state.currentCategory,
+    cartCount: state.cartCount,
   };
 };
 
-export default connect(mapStateToProps)(Products);
+const mapDispatchToProps = (dispatch, getState) => ({
+  getProducts: (data) => dispatch( actions.getProducts(data)),
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

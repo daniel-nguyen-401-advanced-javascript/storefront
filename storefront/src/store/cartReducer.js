@@ -15,8 +15,9 @@ const reducer = (state = initState, action) => {
       break;
     
     case 'REMOVE_FROM_CART':
-      newState.cartContents = newState.cartContents.filter((val) => {
-        return val.name !== action.payload;
+      newState.cartCount--;
+      newState.cartContents = newState.cartContents.filter((val, id) => {
+        return id !== action.payload;
       });
       break;
 
@@ -27,13 +28,5 @@ const reducer = (state = initState, action) => {
   return newState;
 }
 
-const addItem = (product) => {
-  return { type: 'ADD_TO_CART', payload: product};
-};
-
-const removeItem = (product) => {
-  return { type: 'REMOVE_FROM_CART', payload: product};
-};
-
 export default reducer;
-export { addItem, removeItem };
+
