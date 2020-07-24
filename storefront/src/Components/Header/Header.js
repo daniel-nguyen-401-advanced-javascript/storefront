@@ -48,12 +48,12 @@ function ButtonAppBar(props) {
 const mapStateToProps = (state) => {
   return {
     cart: state.cart,
-    cartCount: state.cartCount
+    cartCount: state.cart.cartCount
   };
 };
 
 const mapDispatchToProps = (dispatch, getState) => ({
 
-})
+});
 
-export default connect(mapStateToProps)(ButtonAppBar);
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonAppBar);

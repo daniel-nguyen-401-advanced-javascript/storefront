@@ -15,10 +15,7 @@ function SimpleCart(props) {
         {props.cart.cartContents[i].name }
         <DeleteIcon onClick={
           (e) => {
-            props.dispatch({
-              type: 'REMOVE_FROM_CART',
-              payload: props.cart.cartContents[i].name,
-            });
+            props.removeFromCart(props.cart.cartContents[i]._id);
           }
         }>
         </DeleteIcon>
@@ -54,6 +51,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, getState) => ({
   getProducts: (data) => dispatch(actions.getProducts(data)),
   addToCart: (data) => dispatch(actions.addToCart(data)),
+  removeFromCart: (data) => dispatch(actions.removeFromCart(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

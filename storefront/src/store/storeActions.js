@@ -14,7 +14,7 @@ const renderProducts = payload => {
 
 export const getCategories = () => async dispatch => {
   let results = await axios.get('https://api-js401.herokuapp.com/api/v1/categories')
-  dispatch(renderCategories(results.data));
+  dispatch(renderCategories(results.data.results));
 }
 
 const renderCategories = payload => {
@@ -31,8 +31,8 @@ export const addToCart = payload => {
   }
 }
 
-export const remove = (id) => async dispatch => {
-  await axios.delete(`https://api-js401.herokuapp.com/api/v1/products/${id}`);
+export const removeFromCart = (id) => async dispatch => {
+  // await axios.delete(`https://api-js401.herokuapp.com/api/v1/products/${id}`);
   dispatch(actualRemove(id))
 }
 

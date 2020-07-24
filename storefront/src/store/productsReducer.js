@@ -11,9 +11,10 @@ export default (state = initState, action) => {
   switch (type) {
 
     case 'GET_PRODUCTS':
+      console.log('inside getProductsReducer');
       newState.allProducts = payload;
-      return payload;
-
+      // return newState;
+      break;
     default:
       break;
   }

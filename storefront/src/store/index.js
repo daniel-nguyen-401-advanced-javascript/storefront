@@ -14,6 +14,6 @@ let reducers = combineReducers({
     products: productsReducer,
 });
 
-const store = () => createStore(combineReducers(reducers), composeWithDevTools(applyMiddleware(thunk)));
+const store = () => createStore((reducers), composeWithDevTools(applyMiddleware(thunk)));
 
 export default store();

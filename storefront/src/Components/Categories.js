@@ -21,11 +21,10 @@ function Categories(props) {
         key={i}
         onClick={(e) => {
           //change current cat
-          props.dispatch({
-            type: 'CHANGE_CATEGORY',
-            payload: props.categories[i].name,
-          });
-        }}
+         
+          props.changeCat(props.categories[i].name)
+          }
+        }
         >
           {props.categories[i].displayName || props.categories[i].name}
         </Button>,
@@ -40,13 +39,15 @@ function Categories(props) {
 }
 
 const mapStateToProps = (state) => {
+  
   return {
-    categories: state.allCategories,
+    categories: state.categories.allCategories,
   };
 };
 
 const mapDispatchToProps = (dispatch, getState) => ({
-  getCategories: (data) => dispatch( actions.getCategories(data))
+  getCategories: (data) => dispatch( actions.getCategories(data)),
+  changeCat: (data) => dispatch( actions.changeCat(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
