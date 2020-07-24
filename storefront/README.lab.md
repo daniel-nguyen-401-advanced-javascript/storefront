@@ -4,8 +4,8 @@ Virtual Store Phase 3: Connect the Virtual Store to an API to retrieve live data
     
 ## Links
     
-- [CodeSandbox]()
-- [Netlify]()
+- [CodeSandbox](https://codesandbox.io/s/github/daniel-nguyen-401-advanced-javascript/storefront/tree/thunk/storefront?fontsize=14&hidenavigation=1&theme=dark)
+- [Netlify](https://affectionate-kalam-9f92cb.netlify.app)
     
 ## Phase 3 Requirements
 
