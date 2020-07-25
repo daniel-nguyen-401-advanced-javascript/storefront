@@ -1,29 +1,29 @@
-# Redux Asynchronous Actions - Lab 32
+# Redux Additional Topics - Lab 33
 
-Virtual Store Phase 3: Connect the Virtual Store to an API to retrieve live data from your data source, using thunk to enable asynchronous actions
+Virtual Store Phase 4: Complete work on the Virtual Store by adding detail pages for individual products as well as the the cart checkout page
     
 ## Links
     
-- [CodeSandbox](https://codesandbox.io/s/github/daniel-nguyen-401-advanced-javascript/storefront/tree/thunk/storefront?fontsize=14&hidenavigation=1&theme=dark)
-- [Netlify](https://affectionate-kalam-9f92cb.netlify.app)
+- [CodeSandbox]()
+- [Netlify]()
     
-## Phase 3 Requirements
+## Phase 4 Requirements
 
-In phase 3, we will be connecting our Virtual Store to a live API so that our data is persistent and able to be separately managed.
+In phase 4, we will be completing work on our Virtual Store by adding a two full page views to the application: Product Details and Checkout
 
-The user stories from Phases 1 and 2 remain unchanged. For this phase, we are now adding the following new user stories to meet the new requirements.
+The user stories from Phases 1, 2 and 3 remain unchanged. For this phase, we are now adding the following new user stories to meet the new requirements.
 
-* As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock
-* As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it
+* As a user, I want to see a full detail view of a product so that I can make a more informed choice about purchasing it.
+* As a user, I want to view my full cart and initiate the checkout process so that I can purchase my items and have them delivered
 
 ## Technical Requirements / Notes
 
 And as developers, here are the high level development tasks that address the above end user requirements and workflow
 
-* Continue to use Material UI Components for layout and styling
-* Load the category and product list from a remote API on page load.
-* Update the product quantity in stock when adding items to (or removing from) the cart
-* Continue to use multiple reducers
+* Add routing to the application
+* Link every product to a page that displays the full product details
+* Link the “Cart” summary in the header to a full shopping cart page with shipping/payment forms
+* Additionally, we will be swapping out our Redux store and replacing it with a store built using Redux Toolkit
     
 ## Testing Instructions   
 

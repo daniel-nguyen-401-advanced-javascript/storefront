@@ -1,13 +1,17 @@
 import React from 'react';
 import {Provider} from 'react-redux';
+import {Route} from 'react-router-dom';
 import store from './store';
-import Products from './Components/Products';
+// import Products from './Components/Products';
+import {ProductsWithRouter} from './Components/Products';
 import Categories from './Components/Categories';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import SimpleCart from './Components/SimpleCart';
 import Grid from '@material-ui/core/Grid';
+import ProductDetails from './Components/ProductDetails';
 import './styles/styles.scss';
+
 
 // connect app to global state redux store
 // wrap app in store provider
@@ -30,7 +34,7 @@ function App() {
       </Grid>
         <h2>Products</h2>
       <div className="body">
-      <Products />
+      <ProductsWithRouter />
       </div>
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 // import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -11,7 +12,12 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import * as actions from '../store/storeActions.js';
 
+
 function Products(props){
+
+  const handleProduct = (i) => {
+    props.history.push(`/products/${props.products[i]._id}`)
+  }
 
   const {getProducts} = props;
 
@@ -51,8 +57,15 @@ function Products(props){
         }}>
             Add to cart ${props.products[i].price}
           </Button>
+          <Button size="small" color="primary"
+          onClick={() => {handleProduct(i)}}>Details
+          {/* <Link to={`/products/${props.products[i]._id}`}>Details</Link> */}
+          </Button>
         </CardActions>
-      </Card></Grid>);
+      </Card>
+      {/* <Link to={`/products/${props.products[i]._id}`}>Details</Link> */}
+      </Grid>);
+       
   }
 
   return (
@@ -81,7 +94,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, getState) => ({
   getProducts: (data) => dispatch( actions.getProducts(data)),
   addToCart: (data) => dispatch(actions.addToCart(data)),
- 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Products);
+// export default connect(mapStateToProps, mapDispatchToProps)(Products);
+
+export const ProductsWithRouter = withRouter(connect(mapStateToProps, mapDispatchToProps)(Products));
